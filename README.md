@@ -1,13 +1,13 @@
 ## Summary
 End-to-end pipeline that fetches live weather from Open-Meteo, merges it with
-city population data, loads it into BigQuery, aggregates it with SQL, and
+population data, loads it into BigQuery, aggregates it with SQL, and
 visualizes it in a Looker Studio dashboard.
 
 ## What changed
 - `fetch_api.py`: loads the population file and calls Open-Meteo per city
 - `merge.py`: joins population and weather on `City`
 - `data_cleaning.py`: handles nulls, enforces dtypes (`int64`, `float64`),
-  adds `Temperature_F` and `Temperature_Category` (Cold/Mild/Hot)
+  adds `Temperature_Category` (Cold/Mild/Hot)
 - `bigquery_upload.py`: loads the DataFrame into `current_weather_stats`
 - `main.py`: runs the whole pipeline
 - Project setup: `.gitignore` (data, venv, cache, `.env`, GCP key), uv environment
