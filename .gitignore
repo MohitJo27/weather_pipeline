@@ -9,8 +9,5 @@ wheels/
 # Virtual environments
 .venv
 
-# Data Files
-data/
-
 # gcp key
 gcp-key.json
